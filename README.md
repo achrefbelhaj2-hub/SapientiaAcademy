@@ -39,10 +39,10 @@ XAMPP
 ![Login Page](captures/login.png)
 
 ### 📊 Admin Dashboard
-![Admin Dashboard](captures/admin dashboard.png)
+![Admin Dashboard](captures/admindashboard.png)
 
 ### 📚 users Management
-![Courses Management](captures/gestion users.png)
+![Courses Management](captures/gestionusers.png)
 
 ### 📝 User Dashboard
-![Exercises](captures/user dashboard.png)
+![Exercises](captures/userdashboard.png)
