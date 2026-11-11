@@ -1,0 +1,73 @@
+
+
+:root {
+    --primary: #7463F3;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    transition: background 0.3s, color 0.3s;
+}
+
+nav {
+    background: var(--primary);
+    padding: 18px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+nav .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+nav .logo img {
+    height: 40px;
+    object-fit: contain;
+}
+
+nav .user-info {
+    color: white;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+nav .logout-btn {
+    background-color: var(--accent);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+nav .logout-btn:hover {
+    background-color: #8c73ff;
+}
+
+#dark-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+body.dark-mode nav {
+    background: #1e293b;
+}
+
+body.dark-mode nav .logout-btn {
+    background-color: #6366f1;
+}

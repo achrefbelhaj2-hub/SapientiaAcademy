@@ -1,0 +1,225 @@
+
+:root {
+    --primary: #7463F3;
+    --primary-dark: #5e4cd1;
+    --bg: #f3f4f6;
+    --text-dark: #1a1a1a;
+    --text-gray: #6b7280;
+    --border-gray: #d1d5db;
+    --bg-dark: #111827;
+    --card-bg-dark: #1f2937;
+    --primary-darkmode: #9d8cff;
+    --text-dark-darkmode: #f3f4f6;
+    --text-gray-darkmode: #d1d5db;
+    --border-gray-darkmode: #4b5563;
+}
+
+body {
+    background-color: var(--bg);
+}
+
+nav {
+    background: var(--primary);
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    padding: 8px 15px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+nav a.active {
+    background-color: white;
+    color: var(--primary);
+}
+
+#dark-toggle {
+    color: white;
+    cursor: pointer;
+    padding: 0;
+}
+
+#dark-toggle:hover {
+    transition: transform 0.2s;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+}
+
+.login-box {
+    display: flex;
+    flex-wrap: wrap;
+    background: white;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+    min-height: 600px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.left-panel {
+    flex: 1;
+    min-height: 600px;
+    flex-direction: column;
+}
+
+.right-panel {
+    min-height: 600px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.auth-form input, .auth-form button, .google-login {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+    transition: background 0.3s, color 0.3s, border 0.3s;
+}
+
+.auth-form input {
+    border: 1px solid var(--border-gray);
+}
+
+.auth-form .forgot {
+    display: block;
+    font-size: 0.875rem;
+    color: var(--primary);
+    margin-top: 0.5rem;
+    text-align: right;
+    text-decoration: none;
+}
+
+.auth-form .forgot:hover {
+    color: var(--primary-dark);
+}
+
+.auth-form button {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.separator {
+    display: flex;
+    align-items: center;
+    margin: 2rem 0;
+}
+
+.separator div {
+    flex: 1;
+    height: 1px;
+    background: #d1d5db;
+}
+
+.separator span {
+    margin: 0 0.5rem;
+    color: #9ca3af;
+    font-size: 0.875rem;
+}
+
+.google-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid var(--border-gray);
+    background-color: white;
+    color: var(--text-dark);
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: background 0.3s;
+    margin-top: 0.5rem;
+}
+
+.google-login:hover {
+    background-color: #f3f4f6;
+}
+
+.signup-note {
+    text-align: center;
+    font-size: 0.875rem;
+    color: var(--text-gray);
+    margin-top: 2rem;
+}
+
+.signup-note a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.signup-note a:hover {
+    color: var(--primary-dark);
+}
+/*darkvmode*/
+
+body.dark-mode {
+    background-color: var(--bg-dark);
+    color: var(--text-dark-darkmode);
+}
+
+body.dark-mode .login-box {
+    background-color: var(--card-bg-dark);
+}
+
+body.dark-mode .right-panel {
+    background-color: var(--card-bg-dark);
+}
+
+body.dark-mode h2, body.dark-mode input {
+    color: var(--text-dark-darkmode);
+}
+
+body.dark-mode p, body.dark-mode label, .signup-note {
+    color: var(--text-gray-darkmode);
+}
+
+body.dark-mode .auth-form input {
+    background-color: #374151;
+    border: 1px solid var(--border-gray-darkmode);
+    color: var(--text-dark-darkmode);
+}
+
+body.dark-mode .auth-form button, body.dark-mode nav {
+    background-color: var(--primary-darkmode);
+}
+
+body.dark-mode .google-login {
+    background-color: #374151;
+    color: var(--text-dark-darkmode);
+    border: 1px solid var(--border-gray-darkmode);
+}
+
+body.dark-mode .google-login:hover {
+    background-color: #4b5563;
+}
+
+.login-error {
+    display: none;
+    background: #fef2f2;
+    color: #b91c1c;
+    border: 1px solid #fecaca;
+    border-radius: 8px;
+    padding: 12px 14px;
+    margin-bottom: 16px;
+    font-size: 14px;
+    text-align: center;
+}
+
+body.dark-mode .login-error {
+    background: #450a0a;
+    color: #fca5a5;
+    border-color: #7f1d1d;
+}

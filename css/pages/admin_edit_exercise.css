@@ -1,0 +1,195 @@
+
+:root {
+    --primary: #c24100;
+    --primary-dark: #9a3412;
+}
+
+body {
+    min-height: 100vh;
+}
+
+.navbar .logo-area img {
+    margin-right: 12px;
+}
+
+.navbar .logo-area a {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: white;
+    margin-right: 20px;
+    letter-spacing: 0.5px;
+}
+
+.user-menu .logout-btn {
+    transition: background-color 0.2s;
+}
+
+.content-container {
+    padding: 25px;
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.content-container h1 {
+    color: #059669;
+}
+
+.alert-success {
+    padding: 15px;
+    border: 1px solid #a7f3d0;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+.alert-error {
+    padding: 15px;
+    border: 1px solid #fca5a5;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    color: var(--text-dark);
+}
+
+.form-group input[type="text"], .form-group textarea, .form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 1em;
+    transition: border-color 0.2s, background-color 0.2s;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+    border-color: #059669;
+    outline: none;
+}
+
+.form-group small {
+    color: #6b7280;
+    font-size: 0.85em;
+    margin-top: 5px;
+    display: block;
+}
+
+.btn-submit {
+    background-color: #059669;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn-submit:hover {
+    background-color: #047857;
+    transform: translateY(-1px);
+}
+
+.btn-back {
+    padding: 12px 10px;
+    transition: color 0.2s;
+    display: inline-block;
+}
+
+.btn-back:hover {
+    color: var(--primary-dark);
+}
+
+/*darkvmode*/
+
+body.dark-mode {
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+}
+
+body.dark-mode .navbar {
+    background-color: #1a202c;
+    border-bottom-color: var(--dark-primary-light);
+}
+
+body.dark-mode .navbar .logo-area .admin-title {
+    color: var(--dark-text);
+    border-left-color: rgba(255,255,255,0.2);
+}
+
+body.dark-mode .user-menu .user-name {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    border: 1px solid var(--dark-border);
+}
+
+body.dark-mode .logout-btn {
+    background-color: var(--dark-primary-light);
+    color: #1a1a1a;
+}
+
+body.dark-mode .logout-btn:hover {
+    background-color: #eab308;
+}
+
+body.dark-mode .content-container {
+    background-color: var(--dark-card-bg);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+body.dark-mode .content-container h1 {
+    color: #10b981;
+}
+
+body.dark-mode .role-badge {
+    background-color: #b91c1c;
+}
+
+body.dark-mode .alert-success {
+    background-color: #064e3b;
+    color: #a7f3d0;
+    border-color: #10b981;
+}
+
+body.dark-mode .alert-error {
+    background-color: #7f1d1d;
+    color: #fca5a5;
+    border-color: #dc2626;
+}
+
+body.dark-mode .form-group label {
+    color: var(--dark-text);
+}
+
+body.dark-mode .form-group input[type="text"], body.dark-mode .form-group textarea, body.dark-mode .form-group select {
+    background-color: #334155;
+    color: var(--dark-text);
+    border-color: #475569;
+}
+
+body.dark-mode .form-group input:focus, body.dark-mode .form-group textarea:focus, body.dark-mode .form-group select:focus {
+    border-color: #10b981;
+}
+
+body.dark-mode .form-group small {
+    color: #94a3b8;
+}
+
+body.dark-mode .btn-submit {
+    background-color: #10b981;
+    color: var(--dark-bg);
+}
+
+body.dark-mode .btn-submit:hover {
+    background-color: #059669;
+}
+
+body.dark-mode .btn-back {
+    color: var(--dark-primary-light);
+}
+
+body.dark-mode .btn-back:hover {
+    color: #d9b80e;
+}

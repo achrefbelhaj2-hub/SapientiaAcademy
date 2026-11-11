@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inscription - Sapientia Academy</title>
+<link rel="stylesheet" href="css/public.css">
+    <link rel="stylesheet" href="css/pages/signup.css">
+<script>
+    function isAlpha(str) {
+    for (let i = 0; i < str.length; i++) {
+        code = str.charCodeAt(i);
+        if (!( (code >= 65 && code <= 90) || (code >= 97 && code <= 122) )) {
+            return false;
+        }
+    }
+    return str.length > 0; 
+}
+
+function isNumero(str) {
+    if (str.length !== 8) return false;
+    const first = str[0];
+    if (!["2","4","5","9"].includes(first)) return false;
+
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] < '0' || str[i] > '9') return false;
+    }
+    return true;
+}
+
+function valid() {
+    nom = document.getElementById("nom").value.trim();
+    prenom = document.getElementById("prenom").value.trim();
+    numero = document.getElementById("tel").value.trim();
+    email = document.getElementById("email").value.trim();
+    password = document.getElementById("password").value;
+    confirm = document.getElementById("confirm-password").value;
+
+    if (nom == "" || !isAlpha(nom)) {
+        alert("Nom invalide : lettres uniquement.");
+        return false;
+    }
+    if (nom.length < 3) {
+        alert("Nom invalide : LONGEUR >=3.");
+        return false;
+    }
+    if (prenom == "" || !isAlpha(prenom)) {
+        alert("Prénom invalide : lettres uniquement.");
+        return false;
+    }
+    if (prenom.length < 3) {
+        alert("Nom invalide : LONGEUR >=3.");
+        return false;
+    }
+
+    if (!isNumero(numero)) {
+        alert("Numéro invalide : 8 chiffres et commence par 2, 4, 5 ou 9.");
+        return false;
+    }
+
+    if (!(email.indexOf("@")!=-1 && email.indexOf(".")!=-1)) {
+        alert("Adresse e-mail invalide.");
+        return false;
+    }
+    beforeAt = email.split("@")[0];
+    if (beforeAt.length < 6) {
+        alert("L'adresse e-mail doit avoir au moins 6 caractères avant @.");
+        return false;
+    }
+
+    let hasUpper = false, hasLower = false, hasDigit = false, hasSymbol = false;
+    for (let i = 0; i < password.length; i++) {
+        const ch = password[i];
+        if (ch >= 'A' && ch <= 'Z') hasUpper = true;
+        else if (ch >= 'a' && ch <= 'z') hasLower = true;
+        else if (ch >= '0' && ch <= '9') hasDigit = true;
+        else hasSymbol = true;
+    }
+
+    if (password.length < 8 || !hasUpper || !hasLower || !hasDigit || !hasSymbol) {
+        alert("Mot de passe trop faible.\nIl doit contenir : majuscule, minuscule, chiffre, symbole et au moins 8 caractères.");
+        return false;
+    }
+
+    if (password !== confirm) {
+        alert("Les mots de passe ne correspondent pas.");
+        return false;
+    }
+
+    return true;
+}
+
+</script>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <div class="logo">
+        <img src="DDD-removebg-preview.png" alt="Sapientia Logo">
+    </div>
+    <div>
+        <a href="home.html">Accueil</a>
+        <a href="login.html">Connexion</a>
+        <a href="signup.html" class="active">Inscription</a>
+        <button id="dark-toggle">🌓</button> 
+    </div>
+</nav>
+
+<div class="container">
+    <div class="register-box">
+        <div class="left-panel">
+            <h1>Démarrez votre aventure.</h1>
+            <p>Rejoignez Sapientia aujourd'hui et accédez à des milliers de cours conçus pour votre succès.</p>
+            <div class="decorative"></div>
+            <p class="hashtag">#MnArada3olaSahiraLayali</p>
+        </div>
+
+        <div class="right-panel">
+            <h2>Créer un Compte</h2>
+            <p>Remplissez le formulaire pour vous inscrire.</p>
+
+            <form class="auth-form" onsubmit="return valid()" method="post" action="sign.php">
+                <div class="form-group">
+                    <label for="nom">Nom</label>
+                    <input type="text" name="nom" id="nom" namplaceholder="Votre nom" required>
+                </div>
+                <div class="form-group">
+                    <label for="prenom">Prénom</label>
+                    <input type="text" name="prenom" id="prenom" placeholder="Votre prénom" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Adresse E-mail</label>
+                    <input type="email" name="email" id="email" placeholder="vous@exemple.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="tel">Numéro de téléphone</label>
+                    <input type="tel" name="tel" id="tel" placeholder="+216 ..." required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Mot de passe</label>
+                    <input type="password" name="password" id="password" placeholder="mdp" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Confirmer le mot de passe</label>
+                    <input type="password" id="confirm-password" placeholder="mdp" required>
+                </div>
+                <div class="form-group">
+                    <label for="birthdate">Date de naissance</label>
+                    <input type="date" id="birthdate" required>
+                </div>
+                <button type="submit">S'inscrire</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="theme.js"></script>
+
+</body>
+</html>

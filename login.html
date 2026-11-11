@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Connexion - Sapientia Academy</title>
+<link rel="stylesheet" href="css/public.css">
+    <link rel="stylesheet" href="css/pages/login.css">
+<script>
+function verif() {
+    email = document.getElementById("email").value;
+    password = document.getElementById("password").value;
+    emailError = document.getElementById("email-error");
+    passError = document.getElementById("password-error");
+
+    valid = true;
+    // test mail
+    if (!(email.indexOf("@")!=-1 && email.indexOf(".")!=-1)) {
+        emailError.innerHTML = "Adresse e-mail invalide.";
+        valid = false;
+    } else {
+        emailError.innerHTML = "";
+    }
+    // test mdp
+    if (password.length < 8) {
+        passError.innerHTML = "Le mot de passe doit contenir au moins 8 caractères.";
+        valid = false;
+    } else {
+        passError.innerHTML = "";
+    }
+
+    return valid;
+}
+</script>
+
+</head>
+<body>
+
+<nav>
+    <div class="logo">
+        <img src="DDD-removebg-preview.png" alt="Sapientia Logo">
+    </div>
+    <div>
+        <a href="home.html">Accueil</a>
+        <a href="login.html" class="active">Connexion</a>
+        <a href="signup.html">Inscription</a>
+        <button id="dark-toggle">🌓</button>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="login-box">
+        <div class="left-panel">
+            <h1>Sapientia.</h1>
+            <p>Libérez votre potentiel académique. Des cours de pointe, un soutien personnalisé, et une communauté dédiée à votre réussite.</p>
+            <div class="decorative"></div>
+            <p class="hashtag">#MnArada3olaSahiraLayali</p>
+        </div>
+
+        <div class="right-panel">
+            <h2>Bienvenue</h2>
+            <p>Connectez-vous pour accéder à vos cours.</p>
+
+            <div id="login-error" class="login-error" role="alert">
+                Email ou mot de passe incorrect. Veuillez réessayer.
+            </div>
+
+            <form class="auth-form" onsubmit="return verif()"  action="login.php" method="POST">
+                <div class="form-group">
+                    <label for="email">Adresse E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="vous@exemple.com" required>
+                    <p id="email-error" style="color:red; font-size:14px;"></p>
+
+                </div>
+                <div class="form-group">
+                    <label for="password">Mot de Passe</label>
+                    <input type="password" name="password" id="password" placeholder="mdp" required>
+                    <p id="password-error" style="color:red; font-size:14px;"></p>
+                </div>
+                <button type="submit">Se Connecter</button>
+            </form>
+
+            <p class="signup-note">
+                Pas encore de compte ? <a href="signup.html">S'inscrire ici.</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<script>
+//si mdp ou email invalide stay dans la meme page
+if (new URLSearchParams(window.location.search).get('error') === '1') {
+    document.getElementById('login-error').style.display = 'block';
+    document.getElementById('email').focus();
+    history.replaceState(null, '', window.location.pathname);
+}
+</script>
+
+<script src="theme.js"></script>
+
+</body>
+</html>

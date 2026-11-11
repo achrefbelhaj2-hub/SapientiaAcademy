@@ -1,0 +1,253 @@
+
+:root {
+    --primary: #c24100;
+    --primary-dark: #9a3412;
+}
+
+.navbar {
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.navbar .logo-area a {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: white;
+    margin-right: 20px;
+    letter-spacing: 0.5px;
+}
+
+.navbar .logo-area img {
+    margin-right: 12px;
+}
+
+.user-menu .user-name {
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.user-menu .logout-btn:hover {
+    transform: translateY(-1px);
+}
+
+#dark-toggle {
+    transition: transform 0.2s;
+}
+
+#dark-toggle:hover {
+    transform: scale(1.2);
+}
+
+.content-container {
+    max-width: 1200px;
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.content-container h2 {
+    color: var(--text-dark);
+    transition: color 0.3s;
+}
+
+.role-badge {
+    transition: background-color 0.3s;
+}
+
+.btn-dashboard-back {
+    display: inline-block;
+    background-color: #fce7f3;
+    color: var(--primary-dark);
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.btn-dashboard-back:hover {
+    background-color: #fbcfe8;
+}
+
+.user-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.user-table th, .user-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.user-table th {
+    background-color: var(--primary);
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+.user-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.user-table tbody tr:hover {
+    background-color: #f0f0f0;
+}
+
+.user-role-admin {
+    font-weight: bold;
+    color: #b91c1c;
+}
+
+.user-role-eleve {
+    color: #059669;
+}
+
+.action-btn {
+    padding: 6px 10px;
+    margin-right: 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85em;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.btn-edit {
+    background-color: #2563eb;
+    color: white;
+}
+
+.btn-edit:hover {
+    background-color: #1d4ed8;
+}
+
+.btn-delete {
+    background-color: #dc2626;
+    color: white;
+}
+
+.btn-delete:hover {
+    background-color: #b91c1c;
+}
+
+@media (max-width: 900px) {
+    .content-container {
+        padding: 10px;
+        margin: 20px auto;
+    }
+    .user-table thead {
+        display: none;
+    }
+    .user-table, .user-table tbody, .user-table tr, .user-table td {
+        display: block;
+        width: 100%;
+    }
+    .user-table tr {
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+    }
+    .user-table td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+    }
+    .user-table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-left: 15px;
+        font-weight: bold;
+        text-align: left;
+    }
+}
+/*darkvmode*/
+
+body.dark-mode {
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+}
+
+body.dark-mode .navbar {
+    background-color: #1a202c;
+    border-bottom-color: var(--dark-primary-light);
+}
+
+body.dark-mode .navbar .logo-area .admin-title {
+    color: var(--dark-text);
+    border-left-color: rgba(255,255,255,0.2);
+}
+
+body.dark-mode .user-menu .user-name {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    border: 1px solid var(--dark-border);
+}
+
+body.dark-mode .content-container {
+    background-color: var(--dark-card-bg);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+body.dark-mode .content-container h2, body.dark-mode .content-container p {
+    color: var(--dark-text);
+}
+
+body.dark-mode .role-badge {
+    background-color: #b91c1c;
+}
+
+body.dark-mode .logout-btn {
+    background-color: var(--dark-primary-light);
+    color: #1a1a1a;
+}
+
+body.dark-mode .btn-dashboard-back {
+    background-color: #334155;
+    color: #cbd5e1;
+}
+
+body.dark-mode .btn-dashboard-back:hover {
+    background-color: #475569;
+}
+
+body.dark-mode .user-table {
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+body.dark-mode .user-table th {
+    background-color: var(--dark-border);
+    color: var(--dark-primary-light);
+    border-bottom: 1px solid #475569;
+}
+
+body.dark-mode .user-table td {
+    color: var(--dark-text);
+    border-bottom: 1px solid #334155;
+    background-color: var(--dark-card-bg);
+}
+
+body.dark-mode .user-table tbody tr:nth-child(even) {
+    background-color: #1e293b;
+}
+
+body.dark-mode .user-table tbody tr:hover {
+    background-color: #273449;
+}
+
+body.dark-mode .user-role-admin {
+    color: #f87171;
+}
+
+body.dark-mode .user-role-eleve {
+    color: #34d399;
+}
+
+body.dark-mode .user-table tr {
+    border-color: #334155;
+}

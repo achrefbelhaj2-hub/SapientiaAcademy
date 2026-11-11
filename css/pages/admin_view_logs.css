@@ -1,0 +1,223 @@
+
+:root {
+    --primary: #c24100;
+    --primary-dark: #9a3412;
+}
+
+.navbar {
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.navbar .logo-area a {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: white;
+    margin-right: 20px;
+    letter-spacing: 0.5px;
+}
+
+.navbar .logo-area img {
+    margin-right: 12px;
+}
+
+.user-menu .user-name {
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.user-menu .logout-btn:hover {
+    transform: translateY(-1px);
+}
+
+#dark-toggle {
+    transition: transform 0.2s;
+}
+
+#dark-toggle:hover {
+    transform: scale(1.2);
+}
+
+.content-container {
+    max-width: 1000px;
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.alert-success {
+    padding: 15px;
+    border: 1px solid #a7f3d0;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+.alert-error {
+    padding: 15px;
+    border: 1px solid #fca5a5;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+.alert-warning {
+    border: 1px solid #fde047;
+    border-radius: 6px;
+}
+
+.log-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.log-table th, .log-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.log-table th {
+    background-color: #f3f4f6;
+    color: var(--primary-dark);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+.log-table tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+.action-cell {
+    font-family: monospace;
+    font-size: 0.9em;
+    color: #4b5563;
+    max-width: 400px;
+    overflow-wrap: break-word;
+}
+.btn-dashboard-back {
+    display: inline-block;
+    background-color: #fce7f3;
+    color: var(--primary-dark);
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.btn-dashboard-back:hover {
+    background-color: #fbcfe8;
+}
+/*darkvmode*/
+
+body.dark-mode {
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+}
+
+body.dark-mode .content-container {
+    background-color: var(--dark-card-bg);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+body.dark-mode .navbar {
+    background-color: #1a202c;
+    border-bottom-color: var(--dark-primary-light);
+}
+
+body.dark-mode .navbar .logo-area .admin-title {
+    color: var(--dark-text);
+    border-left-color: rgba(255,255,255,0.2);
+}
+body.dark-mode .btn-dashboard-back {
+    background-color: #334155;
+    color: #cbd5e1;
+}
+
+body.dark-mode .btn-dashboard-back:hover {
+    background-color: #475569;
+}
+body.dark-mode .user-menu .user-name {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    border: 1px solid var(--dark-border);
+}
+
+body.dark-mode .logout-btn {
+    background-color: var(--dark-primary-light);
+    color: #1a1a1a;
+}
+
+body.dark-mode .role-badge {
+    background-color: #b91c1c;
+}
+
+body.dark-mode .alert-success {
+    background-color: #064e3b;
+    color: #a7f3d0;
+    border-color: #10b981;
+}
+
+body.dark-mode .alert-error {
+    background-color: #7f1d1d;
+    color: #fca5a5;
+    border-color: #dc2626;
+}
+
+body.dark-mode .alert-warning {
+    color: #fde047;
+}
+
+body.dark-mode .log-table {
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+body.dark-mode .log-table th {
+    background-color: #334155;
+    color: var(--dark-text);
+    border-bottom-color: #475569;
+}
+
+body.dark-mode .log-table td {
+    border-bottom-color: #475569;
+}
+
+body.dark-mode .log-table tbody tr:hover {
+    background-color: #1e293b;
+}
+
+body.dark-mode .action-cell {
+    color: #94a3b8;
+}
+
+body.dark-mode .btn-back {
+    color: var(--dark-primary-light);
+}
+
+body.dark-mode .btn-back:hover {
+    color: #d9b80e;
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 1rem;
+    }
+    .navbar .logo-area {
+        margin: 0 auto;
+        padding-bottom: 10px;
+    }
+    .user-menu {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+    .log-table-wrapper {
+        overflow-x: auto;
+    }
+    .log-table {
+        min-width: 600px;
+    }
+}

@@ -1,0 +1,228 @@
+
+:root {
+    --primary: #c24100;
+    --primary-dark: #9a3412;
+}
+
+.navbar {
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.navbar .logo-area a {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: white;
+    margin-right: 20px;
+    letter-spacing: 0.5px;
+}
+
+.navbar .logo-area img {
+    margin-right: 12px;
+}
+
+.user-menu .user-name {
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.user-menu .logout-btn:hover {
+    transform: translateY(-1px);
+}
+
+#dark-toggle {
+    transition: transform 0.2s;
+}
+
+#dark-toggle:hover {
+    transform: scale(1.2);
+}
+
+.content-container {
+    max-width: 1200px;
+}
+
+.table-container {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    margin-top: 20px;
+    overflow-x: auto;
+    border: 1px solid #ddd;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95em;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+    transition: border-color 0.3s;
+}
+
+th {
+    background-color: #f3f4f6;
+    color: #4b5563;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85em;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+tr:hover {
+    background-color: #f9fafb;
+    transition: background-color 0.1s;
+}
+
+.actions-cell {
+    white-space: nowrap;
+}
+
+.btn-action {
+    display: inline-block;
+    padding: 8px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9em;
+    margin-right: 5px;
+    transition: opacity 0.2s, transform 0.1s;
+}
+
+.btn-action:hover {
+    transform: translateY(-1px);
+}
+
+.btn-edit {
+    background-color: #3b82f6;
+    color: white;
+}
+
+.btn-edit:hover {
+    background-color: #2563eb;
+}
+
+.btn-delete {
+    background-color: #ef4444;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-delete:hover {
+    background-color: #dc2626;
+}
+
+.btn-add {
+    background-color: #10b981;
+    color: white;
+}
+
+.btn-add:hover {
+    background-color: #059669;
+}
+
+.btn-back {
+    display: inline-block;
+    background-color: #e5e7eb;
+    color: var(--text-dark);
+    padding: 10px 20px;
+    border-radius: 6px;
+    margin-top: 20px;
+    transition: background-color 0.2s, transform 0.1s, color 0.3s;
+}
+
+.btn-back:hover {
+    background-color: #d1d5db;
+    transform: translateY(-1px);
+}
+
+.alert {
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.alert-success {
+    border: 1px solid #a7f3d0;
+}
+
+.alert-error {
+    border: 1px solid #fca5a5;
+}
+/*darkvmode*/
+
+body.dark-mode {
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+}
+
+body.dark-mode .navbar {
+    background-color: #1a202c;
+    border-bottom-color: var(--dark-primary-light);
+}
+
+body.dark-mode .navbar .logo-area .admin-title {
+    color: var(--dark-text);
+    border-left-color: rgba(255,255,255,0.2);
+}
+
+body.dark-mode .user-menu .user-name {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    border: 1px solid var(--dark-border);
+}
+
+body.dark-mode .logout-btn {
+    background-color: var(--dark-primary-light);
+    color: #1a1a1a;
+}
+
+body.dark-mode .content-container {
+    color: var(--dark-text);
+}
+
+body.dark-mode .table-container {
+    background-color: var(--dark-card-bg);
+    border-color: var(--dark-border);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+body.dark-mode th {
+    background-color: #1e293b;
+    color: #94a3b8;
+    border-color: #334155;
+}
+
+body.dark-mode td {
+    border-bottom-color: #334155;
+}
+
+body.dark-mode tr:hover {
+    background-color: #334155;
+}
+
+body.dark-mode .btn-back {
+    background-color: #334155;
+    color: var(--dark-text);
+}
+
+body.dark-mode .btn-back:hover {
+    background-color: #475569;
+}
+
+body.dark-mode .alert-success {
+    background-color: #064e3b;
+    color: #a7f3d0;
+    border-color: #10b981;
+}
+
+body.dark-mode .alert-error {
+    background-color: #7f1d1d;
+    color: #fca5a5;
+    border-color: #f87171;
+}

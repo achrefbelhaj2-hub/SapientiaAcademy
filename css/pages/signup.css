@@ -1,0 +1,103 @@
+
+:root {
+    --primary: #7463F3;
+    --primary-dark: #5e4cd1;
+    --bg: #f3f4f6;
+    --card-bg: white;
+    --text-dark: #1a1a1a;
+    --text-gray: #6b7280;
+    --border-gray: #d1d5db;
+}
+
+body.dark-mode {
+    --bg: #111827;
+    --card-bg: #1f2937;
+    --primary: #9d8cff;
+    --primary-dark: #7b6fff;
+    --text-dark: #f3f4f6;
+    --text-gray: #d1d5db;
+    --border-gray: #4b5563;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text-dark);
+    transition: all 0.3s ease;
+}
+
+nav {
+    background: var(--primary);
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    padding: 8px 15px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+nav a.active {
+    background-color: white;
+    color: var(--primary);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+}
+
+.register-box {
+    display: flex;
+    flex-wrap: wrap;
+    background: var(--card-bg);
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+    min-height: 650px;
+    transition: all 0.3s ease;
+}
+
+.left-panel {
+    flex: 1;
+    min-height: 650px;
+    flex-direction: column;
+}
+
+.right-panel {
+    background-color: var(--card-bg);
+    min-height: 650px;
+    transition: all 0.3s ease;
+}
+
+.auth-form input, .auth-form button {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+    border: 1px solid var(--border-gray);
+    background-color: var(--card-bg);
+    color: var(--text-dark);
+    transition: all 0.3s ease;
+}
+
+.auth-form button {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    transition: background 0.3s, transform 0.2s;
+}
+
+#dark-toggle {
+    padding: 0;
+}
+
+#dark-toggle:hover {
+    transition: transform 0.2s;
+}
